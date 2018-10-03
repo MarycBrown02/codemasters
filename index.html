@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>myBrella</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!-- Bootstrap Ref -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Firebase Ref -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <br>
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1 class="text-center">myBrella</h1>
+        </div>
+
+        <div class="row">
+
+            <!-- Sign-Up Card-->
+            <div class="col-lg-6">
+                <div class="card card-default">
+                    <div class="card-header">
+                        New Member Sign-Up
+                    </div>
+                    <div class="card-body">
+
+                        <!-- Sign-up Form (note the various input "types")-->
+                        <form role="form">
+                            <div class="form-group row">
+                                <label for="name-input">Name:</label>
+                                <input class="form-control" id="name-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="email-input">Zip:</label>
+                                <input class="form-control" id="email-input" type="email">
+                            </div>
+                            <div class="form-group row">
+                                <label for="age-input">Phone:</label>
+                                <input class="form-control" id="age-input" type="number">
+                            </div>
+                            <div class="form-group row">
+                                <label for="comment-input">Text Time</label>
+                                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                            </div>
+                            <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Most Recent Member card -->
+            <!-- <div class="col-lg-6"> -->
+                <!-- <div class="card card-default"> -->
+                    <!-- <div class="card-header"> -->
+                        <!-- Most Recent Member -->
+                    <!-- </div> -->
+                    <!-- <div class="card-body" id="recent-member"> -->
+                        <!-- <h2 id="name-display">Jimmy John</h2> -->
+                        <!-- <h4 id="email-display">Email: jimmy@john.edu</h4> -->
+                        <!-- <h4 id="age-display">Age: 27</h4> -->
+                        <!-- <p id="comment-display">I'm signing up, because I want to spread sandwiches to the world.</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+
+        </div>
+        
+    </div>               
+   
+</body>
+</html>
