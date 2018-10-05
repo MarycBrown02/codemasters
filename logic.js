@@ -32,7 +32,7 @@ var phone = "";
   console.log (zip);
   console.log (phone);
   
-  database.ref().set({
+  database.ref().push({
     name: name,
     phone: phone,
     zip: zip,
