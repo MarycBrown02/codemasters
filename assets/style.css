@@ -1,11 +1,12 @@
 .jumbotron{
     background-image: url(images/jumboImg.jpg);
-    
+    background-repeat: no-repeat;   
+  
         
 }
 h1{
    text-align: center; 
-
+   
    
 
 }
