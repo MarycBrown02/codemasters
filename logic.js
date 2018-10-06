@@ -18,6 +18,7 @@ var database = firebase.database();
 var name = "";
 var zip = "";
 var phone = "";
+var time  ="";
 
  // Capture Button Click
  $(document).on("click", "#submit-input", function(event) {
@@ -27,10 +28,12 @@ var phone = "";
   name = $("#name-input").val().trim();
   zip = $("#zip-input").val().trim(); 
   phone = $("#phone-input").val().trim();
+  time = $("#time-input").val().trim();
 
   console.log (name);
   console.log (zip);
   console.log (phone);
+  console.log (time);
   
   database.ref().push({
     name: name,
