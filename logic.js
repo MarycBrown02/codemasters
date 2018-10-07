@@ -19,9 +19,11 @@ var name = "";
 var zip = "";
 var phone = "";
 var time = "";
+var optArray = [];
 
 // Capture Button Click
 $(document).on("click", "#submit-input", function (event) {
+  
   // Don't refresh the page!
   event.preventDefault();
 
@@ -29,29 +31,34 @@ $(document).on("click", "#submit-input", function (event) {
   zip = $("#zip-input").val().trim();
   phone = $("#phone-input").val().trim();
   time = $("#textTime-input").val().trim();
-
+  
+  $("input[name=weatherOption]:checked").each(
+    function(){            
+      optArray.push($(this).val());
+    }
+  );
+    
   timeconvert()
+
   function timeconvert() {
-
-
     timeArr = time.split(':')
     hour = timeArr[0]
     minute = timeArr[1]
     minute = parseInt(minute) / 60
     time = parseInt(hour) + minute
-    console.log(time)
   }
 
   console.log(name);
   console.log(zip);
   console.log(phone);
   console.log(time);
-
+  console.log(optArray);
+  
   database.ref().push({
     name: name,
     phone: phone,
     zip: zip,
     time: time,
-
+    options: optArray
   });
 });
