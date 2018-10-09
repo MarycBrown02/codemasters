@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>myBrella</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
 
     <!-- Bootstrap Ref -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -111,12 +112,12 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                            <h5 class="modal-title" id="ModalLabel"></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id='modalBody'>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -124,23 +125,31 @@
                     </div>
                 </div>
             </div>
-            <!-- Most Recent Member card -->
-            <!-- <div class="col-lg-6"> -->
-            <!-- <div class="card card-default"> -->
-            <!-- <div class="card-header"> -->
-            <!-- Most Recent Member -->
-            <!-- </div> -->
-            <!-- <div class="card-body" id="recent-member"> -->
-            <!-- <h2 id="name-display">Jimmy John</h2> -->
-            <!-- <h4 id="email-display">Email: jimmy@john.edu</h4> -->
-            <!-- <h4 id="age-display">Age: 27</h4> -->
-            <!-- <p id="comment-display">I'm signing up, because I want to spread sandwiches to the world.</p> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- </div> -->
 
+            <div class="modal fade" id="modalUns" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">We're sorry to see you go</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                           Enter your phone number below to delete it from our records
+                           <div class="form-group row">
+                                <input class="form-control" id="un-input" type="tel">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"  id='unSubmit'>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button type="button" class="btn btn-primary" id='un'>Unsubscibe from myBrella</button>
         </div>
-
     </div>
 
 </body>
