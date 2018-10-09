@@ -27,7 +27,9 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
             <!-- <h1 class="text-left">myBrella</h1> -->
-            <h1>myBrella</h1>
+            <div id="title-container">
+                <h1 id="title" class="text-center"><span id="yo">myBrella</span></h1> 
+            </div>
         </div>
 
         <div class="row">
@@ -59,7 +61,9 @@
                                 <input class="form-control" id="textTime-input" type="time">
                                 <!-- <textarea class="form-control" id="comment-input" rows="5"></textarea> -->
                             </div>
+                            <div id='checkboxTop'>Text me. . .</div>
                             <div class="form-check form-check-inline">
+
                                 <input class="form-check-input" type="checkbox" id="rain" name="weatherOption" value="rain">
                                 <label class="form-check-label" for="rain">Rain</label>
                             </div>
@@ -67,25 +71,31 @@
                                 <input class="form-check-input" type="checkbox" id="storms" name="weatherOption" value="storms">
                                 <label class="form-check-label" for="storms">Storms</label>
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
+
                                 <input class="form-check-input" type="checkbox" id="cold" name="weatherOption" value="cold">
                                 <label class="form-check-label" for="cold">Cold</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="warm" name="weatherOption" value="warm">
                                 <label class="form-check-label" for="warm">Warm</label>
+
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="hail" name="weatherOption" value="hail">
-                                <label class="form-check-label" for="hail">Hail</label>
+
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="snow" name="weatherOption" value="snow">
-                                <label class="form-check-label" for="snow">Snow</label>
+
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
+
                                 <input class="form-check-input" type="checkbox" id="daily" name="weatherOption" value="daily">
                                 <label class="form-check-label" for="daily">Daily</label>
+
                             </div>
                             <br>
                             <button class="btn btn-default" id="submit-input" type="submit">Submit</button>
