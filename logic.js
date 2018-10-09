@@ -23,7 +23,7 @@ var optArray = [];
 
 // Capture Button Click
 $(document).on("click", "#submit-input", function (event) {
-  
+
   // Don't refresh the page!
   event.preventDefault();
 
@@ -31,13 +31,20 @@ $(document).on("click", "#submit-input", function (event) {
   zip = $("#zip-input").val().trim();
   phone = $("#phone-input").val().trim();
   time = $("#textTime-input").val().trim();
-  
+
+
   $("input[name=weatherOption]:checked").each(
-    function(){            
+    function () {
       optArray.push($(this).val());
     }
   );
-    
+
+  if (name === '' || zip === '' || phone === '' || time === '' || optArray.length === 0) {
+    $(".modal-body").text('Please fill out all required fields')
+    $(".modal-title").text('Submission Error')
+    $('#modalConf').modal('toggle')
+    return
+  }
   timeconvert()
 
   function timeconvert() {
@@ -53,7 +60,7 @@ $(document).on("click", "#submit-input", function (event) {
   console.log(phone);
   console.log(time);
   console.log(optArray);
-  
+
   database.ref().push({
     name: name,
     phone: phone,
@@ -61,4 +68,9 @@ $(document).on("click", "#submit-input", function (event) {
     time: time,
     options: optArray
   });
+  optArray = []
+  $(".modal-body").text('Your data has been successfully added to our database. You will now recieve automatic text updates on the weather')
+  $(".modal-title").text('Thanks for submitting!')
+  $('#modalConf').modal('toggle')
 });
+
