@@ -20,4 +20,12 @@
 body {
     background-color: rgba(95, 139, 145, 0.687);
 }
-
+#un {
+    margin: 0 10px 0 10px;
+    height:50px;
+}
+#un-input {
+    width:50%;
+    margin: auto;
+    text-align: center;
+}

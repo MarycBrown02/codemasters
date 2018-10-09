@@ -14,16 +14,15 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 
-
 var name = "";
 var zip = "";
 var phone = "";
 var time = "";
 var optArray = [];
 
+
 // Capture Button Click
 $(document).on("click", "#submit-input", function (event) {
-
   // Don't refresh the page!
   event.preventDefault();
 
@@ -40,7 +39,7 @@ $(document).on("click", "#submit-input", function (event) {
   );
 
   if (name === '' || zip === '' || phone === '' || time === '' || optArray.length === 0) {
-    $(".modal-body").text('Please fill out all required fields')
+    $("#modalBody").text('Please fill out all required fields')
     $(".modal-title").text('Submission Error')
     $('#modalConf').modal('toggle')
     return
@@ -69,8 +68,30 @@ $(document).on("click", "#submit-input", function (event) {
     options: optArray
   });
   optArray = []
-  $(".modal-body").text('Your data has been successfully added to our database. You will now recieve automatic text updates on the weather')
-  $(".modal-title").text('Thanks for submitting!')
+  $("#modalBody").text('Your data has been successfully added to our database. You will now recieve automatic text updates on the weather')
+  $("#ModalLabel").text('Thanks for submitting!')
+  $('#modalConf').modal('toggle')
+});
+
+$(document).on("click", "#un", function () {
+  $('#modalUns').modal('toggle')
+});
+
+$(document).on("click", "#unSubmit", function (event) {
+  event.preventDefault()
+  var ph = $("#un-input").val().trim()
+  firebase.database().ref().once('value').then(function (snap) {
+    var user = snap.val()
+    for (key in user) {
+      if (user[key].phone === ph) {
+        database.ref(key).remove()
+      }
+    }
+  })
+  $('#modalUns').modal('toggle')
+
+  $("#modalBody").text("Your will no longer recieve text updates from myBrella! We'll miss you! Come back any time")
+  $("#ModalLabel").text('Successfully Unsubscibed')
   $('#modalConf').modal('toggle')
 });
 
