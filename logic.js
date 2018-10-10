@@ -40,7 +40,7 @@ $(document).on("click", "#submit-input", function (event) {
 
   if (name === '' || zip === '' || phone === '' || time === '' || optArray.length === 0) {
     $("#modalBody").text('Please fill out all required fields')
-    $(".modal-title").text('Submission Error')
+    $("#ModalLabel").text('Submission Error')
     $('#modalConf').modal('toggle')
     return
   }
@@ -90,7 +90,7 @@ $(document).on("click", "#unSubmit", function (event) {
   })
   $('#modalUns').modal('toggle')
 
-  $("#modalBody").text("Your will no longer recieve text updates from myBrella! We'll miss you! Come back any time")
+  $("#modalBody").text("You will no longer recieve text updates from myBrella! We'll miss you! Come back any time")
   $("#ModalLabel").text('Successfully Unsubscibed')
   $('#modalConf').modal('toggle')
 });

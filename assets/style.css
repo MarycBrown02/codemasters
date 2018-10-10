@@ -3,8 +3,8 @@
     background: url(images/jumboImg.jpg);
     background-size:cover;
     background-position: center;
-        
-}
+
+} 
 .h1{
    text-align: center;  
    font-size:200;
@@ -15,13 +15,14 @@
 #yo {
     position:relative;
     bottom:0.5em;
+    font-size:56px; 
 }
 
 body {
     background: url(images/cloud2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-     background-color: rgba(95, 139, 145, 0.687);
+     font-family: 'Comfortaa', cursive;
 }
 #un {
     margin: 0 10px 0 10px;
@@ -31,4 +32,10 @@ body {
     width:50%;
     margin: auto;
     text-align: center;
+}
+#subTitle {
+    font-size:24px;
+    position:relative;
+    bottom:0.5em;
+    text-align:center;
 }
