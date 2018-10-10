@@ -1,4 +1,8 @@
-
+jQuery.ajaxPrefilter(function(options) {
+  if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+  }
+});
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCTG_sjsd2MlTMPRR4bb-pB1fThi8Q-s_8",
@@ -94,4 +98,26 @@ $(document).on("click", "#unSubmit", function (event) {
   $("#ModalLabel").text('Successfully Unsubscibed')
   $('#modalConf').modal('toggle')
 });
+
+function weatherAPI(zipCd) {
+
+  var messages_url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCd + ",us&APPID=0b257507206cea6fd76be1daffae66bc"
+  $.ajax({
+    url: messages_url,
+    method: "GET"
+  }).then(function (e) {
+    weatherArr = e["weather"]
+   weatherDesc = weatherArr[0].main
+  });
+}
+function zipAPI(zip) {
+  var messages_url = 'https://www.zipcodeapi.com/rest/O4aFekqq6dcgipPqWHeDvpzBfyTrBYgZf9SKxkCSw2k9rMN1GXimPxKOT27qYCij/info.json/' + zip + '/degrees'
+  $.ajax({
+    url: messages_url,
+    method: "GET"
+  }).then(function (response) {
+   city = response.city
+
+  })
+}
 
