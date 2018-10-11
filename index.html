@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
 
+
     <!-- Bootstrap Ref -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <script
@@ -16,17 +17,17 @@
     crossorigin="anonymous"></script>
 
 
+    <!-- Bootstrap Ref -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Firebase Ref -->
-    
+
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Bangers|Bevan|Comfortaa|Permanent+Marker|Ranga" rel="stylesheet">
     
@@ -36,7 +37,6 @@
 
 <body>
     <div class="container">
-
         <br>
 
         <!-- Jumbotron -->
@@ -75,13 +75,12 @@
                                 <input class="form-control" id="phone-input" type="tel">
                             </div>
                             <div class="form-group row">
-                                <label for="time-input">Text Time</label>
+                                <label for="textTime-input">Text Time</label>
                                 <input class="form-control" id="textTime-input" type="time">
                                 <!-- <textarea class="form-control" id="comment-input" rows="5"></textarea> -->
                             </div>
                             <div id='checkboxTop'>Text me. . .</div>
                             <div class="form-check form-check-inline">
-
                                 <input class="form-check-input" type="checkbox" id="rain" name="weatherOption" value="rain">
                                 <label class="form-check-label" for="rain">When I need my umbrella (rain and storms)</label>
                             </div>
@@ -91,21 +90,17 @@
                             </div>
                             <br>
                             <div class="form-check form-check-inline">
-
                                 <input class="form-check-input" type="checkbox" id="cold" name="weatherOption" value="cold">
                                 <label class="form-check-label" for="cold">When its cold outside (under 55 degrees)</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="warm" name="weatherOption" value="warm">
                                 <label class="form-check-label" for="warm">When its hot outside (over 90 degrees)</label>
-
                             </div>
                             <br>
                             <div class="form-check form-check-inline">
-
                                 <input class="form-check-input" type="checkbox" id="daily" name="weatherOption" value="daily">
                                 <label class="form-check-label" for="daily">Send me daily weather updates.</label>
-
                             </div>
                             <br>
                             <button class="btn btn-info" id="submit-input" type="submit">Submit</button>
@@ -113,7 +108,30 @@
                     </div>
                 </div>
             </div>
-
+            <div class="card" style="width: 18rem;">
+                <div class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div id="image-rain" class="d-none">
+                            <img class="d-block w-100" src="assets/images/rain.gif" alt="Rain slide" />
+                        </div>
+                        <div id="image-storms" class="d-none">
+                            <img class="d-block w-100" src="assets/images/storms.gif" alt="Storms slide" />
+                        </div>
+                        <div id="image-cold" class="d-none">
+                            <img class="d-block w-100" src="assets/images/snow.gif" alt="Cold slide" />
+                        </div>
+                        <div id="image-warm" class="d-none">
+                            <img class="d-block w-100" src="assets/images/sun.gif" alt="Warm slide" />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="card-title memberhead">Member Information</h5>
+                    <h6 id="name-display">Member Name:</h4>
+                    <h6 id="city-display">City:</h4>
+                    <h6 id="time-display">Text Time:</h4>      
+                </div>
+            </div>
 
             <!-- Modal -->
             <div class="modal fade" id="modalConf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,7 +174,7 @@
                 </div>
                 
             </div>
-            <button type="button" class="btn btn-primary" id='un'>Unsubscibe from myBrella</button>
+            <button type="button" class="btn btn-primary" id='un'>Unsubscribe from myBrella</button>
         </div>
     </div>
 
