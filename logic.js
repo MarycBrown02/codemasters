@@ -55,7 +55,8 @@ $(document).on("click", "#submit-input", function (event) {
   console.log(time);
   console.log(convertedTime);
   console.log(optArray);
-
+  
+  
   // Save subscription to the database
   database.ref().push({
     name: name,
