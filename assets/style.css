@@ -42,3 +42,12 @@ body {
 #weatherCard {
     display: none;
 }
+
+h4{
+    background: #007bff;
+    color: white;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+}
