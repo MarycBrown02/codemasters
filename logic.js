@@ -55,7 +55,8 @@ $(document).on("click", "#submit-input", function (event) {
   console.log(time);
   console.log(convertedTime);
   console.log(optArray);
-
+  
+  
   // Save subscription to the database
   database.ref().push({
     name: name,
@@ -68,7 +69,9 @@ $(document).on("click", "#submit-input", function (event) {
   // Display subscription details
   $('#name-display').html("Member Name: " + name);
   $('#time-display').html("Text Time: " + time);
-  
+  $('#weatherCard').css('display', 'block')
+
+
   // Set city name based on zip
   zipAPI(zip);
     
@@ -156,6 +159,7 @@ function weatherAPI(zipCode) {
     console.log(currentCondition);
     console.log(currentTempK + " K");
     console.log(currentTempF + "° F");
+    $('#currWeath').html('Current weather in ' + cityName + ': ' + currentTempF + ' degrees Fahrenheit, ' + currentCondition)
   });
 }
 
@@ -168,6 +172,9 @@ function zipAPI(zipCode) {
     method: "GET",
   }).then(function (response) {
     console.log(response.city);
+    cityName = response.city
     $('#city-display').html("City: " + response.city);
+    weatherAPI(zipCode)
+
   })
 }
